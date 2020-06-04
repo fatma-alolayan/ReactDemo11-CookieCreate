@@ -33,6 +33,10 @@ function App() {
   const [currentTheme, setCurrentTheme] = useState("light");
   const [_cookies, setCookies] = useState(cookies);
 
+  const createCookie = (newCookie) => {
+    setCookies((oldCookies) => [...oldCookies, newCookie]);
+  };
+
   const deleteCookie = (cookieId) => {
     const updatedCookies = _cookies.filter((cookie) => cookie.id !== +cookieId);
     setCookies(updatedCookies);
@@ -53,7 +57,11 @@ function App() {
           <CookieDetail cookies={_cookies} deleteCookie={deleteCookie} />
         </Route>
         <Route path="/cookies">
-          <CookieList cookies={_cookies} deleteCookie={deleteCookie} />
+          <CookieList
+            cookies={_cookies}
+            createCookie={createCookie}
+            deleteCookie={deleteCookie}
+          />
         </Route>
       </Switch>
     </ThemeProvider>
