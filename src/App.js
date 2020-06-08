@@ -34,7 +34,7 @@ function App() {
   const [_cookies, setCookies] = useState(cookies);
 
   const createCookie = (newCookie) => {
-    setCookies((oldCookies) => [...oldCookies, newCookie]);
+    setCookies([..._cookies, newCookie]);
   };
 
   const deleteCookie = (cookieId) => {
