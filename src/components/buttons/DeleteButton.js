@@ -4,11 +4,11 @@ import { useHistory } from "react-router-dom";
 // Styling
 import { DeleteButtonStyled } from "../../styles";
 
-const DeleteButton = (props) => {
+const DeleteButton = ({ cookieId, deleteCookie }) => {
   const history = useHistory();
 
   const handleDelete = () => {
-    props.deleteCookie(props.cookieId);
+    deleteCookie(cookieId);
     history.push("/cookies");
   };
 
