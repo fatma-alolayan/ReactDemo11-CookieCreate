@@ -21,7 +21,7 @@ const CookieList = ({ cookies, createCookie, deleteCookie }) => {
     <div className="container">
       <SearchBar setQuery={setQuery} />
       <ListWrapper className="row">{cookieList}</ListWrapper>
-      <AddButton />
+      <AddButton createCookie={createCookie} />
     </div>
   );
 };
